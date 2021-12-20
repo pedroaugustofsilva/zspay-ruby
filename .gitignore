@@ -1,0 +1,7 @@
+*.gem
+*.rbc
+.byebug_history
+Gemfile.lock
+.ruby-version
+.ruby-gemset
+.idea

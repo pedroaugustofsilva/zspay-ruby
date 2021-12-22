@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.push File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(::File.join(::File.dirname(__FILE__), 'lib'))
 
 # Maintain your gem's version:
 require 'zspay/version'

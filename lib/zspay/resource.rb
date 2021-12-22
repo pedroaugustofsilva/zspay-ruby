@@ -44,7 +44,8 @@ module Zspay
       def parse_body(response)
         if success_request?(response)
           json = JSON.parse(response.body.to_s, object_class: OpenStruct)
-          json.message = JSON.parse(json.message.gsub(/^\d+ - /, ''), object_class: OpenStruct) unless json.success
+
+          json.message = JSON.parse(json.message.gsub(/^\d+ - /, ''), object_class: OpenStruct) if json.message
 
           json
         else
@@ -69,7 +70,7 @@ module Zspay
       end
 
       def success_request?(response)
-        response.code.to_s =~ /2../
+        response.code.to_s =~ /2../ && response
       end
     end
   end

@@ -46,9 +46,7 @@ module Zspay
           body = response.body.to_s
           json = parse_json(body)
 
-          json.message = parse_json(json.message.gsub(/^\d+ - /, '')) if json.message
-
-          return json if json
+          return json if json.is_a? OpenStruct
 
           OpenStruct.new({ success: false, error: body })
         else
@@ -79,7 +77,7 @@ module Zspay
       def parse_json(json)
         JSON.parse(json, object_class: OpenStruct)
       rescue JSON::ParserError => e
-        nil
+        json
       end
     end
   end

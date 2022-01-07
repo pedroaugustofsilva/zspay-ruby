@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zspay (0.1.0)
+    zspay (0.1.2)
       http
 
 GEM

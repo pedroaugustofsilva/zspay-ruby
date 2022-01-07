@@ -43,11 +43,14 @@ module Zspay
 
       def parse_body(response)
         if success_request?(response)
-          json = JSON.parse(response.body.to_s, object_class: OpenStruct)
+          body = response.body.to_s
+          json = parse_json(body)
 
-          json.message = JSON.parse(json.message.gsub(/^\d+ - /, ''), object_class: OpenStruct) if json.message
+          json.message = parse_json(json.message.gsub(/^\d+ - /, '')) if json.message
 
-          json
+          return json if json
+
+          OpenStruct.new({ success: false, error: body })
         else
           error_log = Logger.new(STDERR)
           error_log.error("Error while making Zspay request" \
@@ -71,6 +74,12 @@ module Zspay
 
       def success_request?(response)
         response.code.to_s =~ /2../ && response
+      end
+
+      def parse_json(json)
+        JSON.parse(json, object_class: OpenStruct)
+      rescue JSON::ParserError => e
+        nil
       end
     end
   end

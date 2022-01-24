@@ -3,8 +3,8 @@
 module Zspay
   class Transfer < Zspay::Resource
     class << self
-      def create(transfer)
-        post('/transferencias', transfer)
+      def create(transfer, custom_token = nil)
+        post('/transferencias', transfer, custom_token)
       end
 
       def schedule_transfer(transfer_id)

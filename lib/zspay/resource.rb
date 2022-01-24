@@ -3,8 +3,8 @@
 module Zspay
   class Resource
     class << self
-      def post(path, payload = {}, body: 'json')
-        req(:post, path, payload, body: body)
+      def post(path, payload = {}, custom_token = nil, body: 'json')
+        req(:post, path, payload, custom_token, body: body)
       end
 
       def patch(path, payload)
@@ -25,19 +25,19 @@ module Zspay
 
       private
 
-      def req(method, path, payload = {}, body: 'json')
-        send("req_#{body}", method, path, payload)
+      def req(method, path, payload = {}, custom_token = nil, body: 'json')
+        send("req_#{body}", method, path, payload, custom_token)
       end
 
-      def req_json(method, path, payload)
-        res = HTTP.headers(headers).send(method, "#{endpoint}#{path}", json: payload)
+      def req_json(method, path, payload, custom_token)
+        res = HTTP.headers(headers(custom_token)).send(method, "#{endpoint}#{path}", json: payload)
 
         parse_body(res)
       end
 
-      def req_form(method, path, payload)
+      def req_form(method, path, payload, custom_token)
         payload = HTTP::FormData::Multipart.new(payload)
-        res = HTTP.headers(headers).send(method, "#{endpoint}#{path}", form: payload)
+        res = HTTP.headers(headers(custom_token)).send(method, "#{endpoint}#{path}", form: payload)
         parse_body(res)
       end
 
@@ -64,9 +64,10 @@ module Zspay
         Zspay::Configuration.endpoint
       end
 
-      def headers
+      def headers(custom_token = nil)
+        token = custom_token ? "Bearer #{custom_token}" : "Bearer #{Zspay::Configuration.token}"
         {
-          'Authorization': "Bearer #{Zspay::Configuration.token}"
+          'Authorization': token
         }
       end
 

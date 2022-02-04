@@ -7,6 +7,10 @@ module Zspay
         post('/vendas', sale)
       end
 
+      def show(sale_id)
+        get("/vendas/#{sale_id}")
+      end
+
       def refund(sale_id)
         post("/vendas/#{sale_id}/estornar")
       end

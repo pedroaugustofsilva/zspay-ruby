@@ -3,8 +3,8 @@
 module Zspay
   class Sale < Zspay::Resource
     class << self
-      def create(sale)
-        post('/vendas', sale)
+      def create(sale, custom_token = nil)
+        post('/vendas', sale, custom_token)
       end
 
       def show(sale_id)

@@ -9,8 +9,8 @@ require 'zspay/version'
 Gem::Specification.new do |spec|
   spec.name        = 'zspay'
   spec.version     = Zspay::VERSION
-  spec.authors     = ['Nullbug']
-  spec.email       = ['pedro@nullbug.dev']
+  spec.authors     = ['Pedro Augusto Silva', 'Edson Lima', 'Nullbug']
+  spec.email       = %w[pedro@nullbug.dev edson@nullbug.dev]
   spec.homepage    = ''
   spec.files       = Dir['lib/**/**.rb']
   spec.summary     = 'ZSPAY'

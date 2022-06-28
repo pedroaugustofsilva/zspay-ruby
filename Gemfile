@@ -9,6 +9,4 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 gem 'activesupport'
-gem 'byebug'
-gem 'rake'
 gem 'logger'

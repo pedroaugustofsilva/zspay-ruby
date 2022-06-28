@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zspay (0.1.5)
+    zspay (0.1.8)
       http
 
 GEM
@@ -19,16 +19,16 @@ GEM
     concurrent-ruby (1.1.9)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    ffi (1.15.4)
+    ffi (1.15.5)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    http (5.0.4)
+    http (5.1.0)
       addressable (~> 2.8)
       http-cookie (~> 1.0)
       http-form_data (~> 2.2)
       llhttp-ffi (~> 0.4.0)
-    http-cookie (1.0.4)
+    http-cookie (1.0.5)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
     i18n (1.8.11)
@@ -38,13 +38,13 @@ GEM
       rake (~> 13.0)
     logger (1.4.3)
     minitest (5.14.4)
-    public_suffix (4.0.6)
+    public_suffix (4.0.7)
     rake (13.0.6)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.8)
+    unf_ext (0.0.8.2)
     zeitwerk (2.5.1)
 
 PLATFORMS

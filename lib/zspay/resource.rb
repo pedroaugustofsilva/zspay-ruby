@@ -7,20 +7,20 @@ module Zspay
         req(:post, path, payload, custom_token, body: body)
       end
 
-      def patch(path, payload)
-        req(:patch, path, payload)
+      def patch(path, payload, custom_token = nil)
+        req(:patch, path, payload, custom_token)
       end
 
-      def get(path)
-        req(:get, path)
+      def get(path, custom_token = nil)
+        req(:get, path, {}, custom_token)
       end
 
-      def delete(path)
-        req(:delete, path)
+      def delete(path, custom_token = nil)
+        req(:delete, path, {}, custom_token)
       end
 
-      def put(path, payload = {})
-        req(:put, path, payload)
+      def put(path, payload = {}, custom_token = nil)
+        req(:put, path, payload, custom_token)
       end
 
       private

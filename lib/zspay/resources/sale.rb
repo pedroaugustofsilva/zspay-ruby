@@ -7,12 +7,12 @@ module Zspay
         post('/vendas', sale, custom_token)
       end
 
-      def show(sale_id)
-        get("/vendas/#{sale_id}")
+      def show(sale_id, custom_token = nil)
+        get("/vendas/#{sale_id}", custom_token)
       end
 
-      def refund(sale_id)
-        post("/vendas/#{sale_id}/estornar")
+      def refund(sale_id, custom_token = nil)
+        post("/vendas/#{sale_id}/estornar", payload = {}, custom_token)
       end
     end
   end

@@ -7,12 +7,12 @@ module Zspay
         post('/transferencias', transfer, custom_token)
       end
 
-      def schedule_transfer(transfer_id)
-        get("/transferencias/agendadas/#{transfer_id}")
+      def schedule_transfer(transfer_id, custom_token = nil)
+        get("/transferencias/agendadas/#{transfer_id}", custom_token)
       end
 
-      def remove(transfer_id)
-        delete("/transferencias/agendadas/#{transfer_id}")
+      def remove(transfer_id, custom_token = nil)
+        delete("/transferencias/agendadas/#{transfer_id}", custom_token)
       end
     end
   end

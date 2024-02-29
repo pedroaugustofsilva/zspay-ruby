@@ -6,5 +6,5 @@ Gemfile.lock
 .ruby-gemset
 .idea
 .tool-versions
-.doc
+doc
 .yardoc

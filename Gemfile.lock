@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zspay (0.1.8)
+    zspay (1.0.0)
       http
 
 GEM
@@ -13,22 +13,23 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.6)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    base64 (0.2.0)
     byebug (11.1.3)
     concurrent-ruby (1.1.9)
-    domain_name (0.5.20190701)
-      unf (>= 0.0.5, < 1.0.0)
-    ffi (1.15.5)
+    domain_name (0.6.20240107)
+    ffi (1.16.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    http (5.1.0)
+    http (5.2.0)
       addressable (~> 2.8)
+      base64 (~> 0.1)
       http-cookie (~> 1.0)
       http-form_data (~> 2.2)
-      llhttp-ffi (~> 0.4.0)
+      llhttp-ffi (~> 0.5.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
@@ -36,7 +37,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.1)
     language_server-protocol (3.17.0.3)
-    llhttp-ffi (0.4.0)
+    llhttp-ffi (0.5.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
     logger (1.4.3)
@@ -46,7 +47,7 @@ GEM
       ast (~> 2.4.1)
       racc
     prism (0.24.0)
-    public_suffix (4.0.7)
+    public_suffix (5.0.4)
     racc (1.7.3)
     rainbow (3.1.1)
     rake (13.0.6)
@@ -66,12 +67,11 @@ GEM
     rubocop-ast (1.31.0)
       parser (>= 3.3.0.4)
       prism (>= 0.24.0)
+    rubocop-rake (0.6.0)
+      rubocop (~> 1.0)
     ruby-progressbar (1.13.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.8.2)
     unicode-display_width (2.5.0)
     zeitwerk (2.5.1)
 
@@ -84,6 +84,7 @@ DEPENDENCIES
   logger
   rake (~> 13.0)
   rubocop (~> 1.21)
+  rubocop-rake (~> 0.6.0)
   zspay!
 
 BUNDLED WITH

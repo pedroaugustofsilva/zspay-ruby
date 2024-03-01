@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'http'
-require 'byebug'
-require 'logger'
-require 'active_support/hash_with_indifferent_access'
+require "http"
+require "byebug"
+require "logger"
+require "active_support/hash_with_indifferent_access"
 
-require 'zspay/configuration'
+require "zspay/configuration"
 
-require 'zspay/resource'
-require 'zspay/resources'
+require "zspay/resource"
+require "zspay/resources"
 
 # The Zspay module is the main namespace for the Zspay gem.
 # It provides methods to configure and access the gem's settings.

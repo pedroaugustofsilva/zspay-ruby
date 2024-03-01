@@ -12,7 +12,7 @@ module Zspay
       # @param custom_token [String, nil] An optional custom token to use for the request.
       # @return [OpenStruct] A structure containing the newly created sale's details if the request is successful.
       def create(sale, custom_token = nil)
-        post('/vendas', sale, custom_token)
+        post("/vendas", sale, custom_token)
       end
 
       # Retrieves details of a specific sale.

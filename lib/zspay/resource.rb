@@ -12,7 +12,7 @@ module Zspay
       # @param custom_token [String, nil] an optional custom token to use for the request.
       # @param body [String] the format of the request body, defaults to 'json'.
       # @return [OpenStruct] the parsed response.
-      def post(path, payload = {}, custom_token = nil, body: 'json')
+      def post(path, payload = {}, custom_token = nil, body: "json")
         req(:post, path, payload, custom_token, body: body)
       end
 
@@ -64,7 +64,7 @@ module Zspay
       # @param custom_token [String, nil] an optional custom token to use for the request.
       # @param body [String] the format of the request body, defaults to 'json'.
       # @return [OpenStruct] the parsed response.
-      def req(method, path, payload = {}, custom_token = nil, body: 'json')
+      def req(method, path, payload = {}, custom_token = nil, body: "json")
         send("req_#{body}", method, path, payload, custom_token)
       end
 
@@ -94,7 +94,6 @@ module Zspay
         parse_body(res)
       end
 
-
       # Parses the response body and returns it as an OpenStruct.
       # If the request was successful, returns the JSON parsed body.
       # Otherwise, logs the error and returns an error message.
@@ -110,13 +109,10 @@ module Zspay
 
           OpenStruct.new({ success: false, error: body })
         else
-          error_log = Logger.new(STDERR)
-          error_log.error("Error while making Zspay request" \
-                            " to: #{response.uri}" \
-                            " body: #{response.body}" \
-                            " status: #{response.code}")
+          error_log = Logger.new($stderr)
+          error_log.error("Request error to: #{response.uri}\ncode: #{response.code}\nbody: #{response.body}")
 
-          OpenStruct.new({ success: false, message: 'An error occurred while making the request' })
+          OpenStruct.new({ success: false, message: "An error occurred while making the request" })
         end
       end
 
@@ -135,7 +131,7 @@ module Zspay
       def headers(custom_token = nil)
         token = custom_token ? "Bearer #{custom_token}" : "Bearer #{Zspay::Configuration.token}"
         {
-          'Authorization': token
+          Authorization: token
         }
       end
 
@@ -153,7 +149,7 @@ module Zspay
       # @return [OpenStruct, String] the parsed JSON or the original string if parsing failed.
       def parse_json(json)
         JSON.parse(json, object_class: OpenStruct)
-      rescue JSON::ParserError => e
+      rescue JSON::ParserError => _e
         json
       end
     end

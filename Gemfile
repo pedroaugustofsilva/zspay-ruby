@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Declare your gem's dependencies in cockpit.gemspec.
@@ -8,5 +8,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem 'activesupport'
-gem 'logger'
+gem "activesupport"
+gem "byebug", "~> 11.1"
+gem "logger"
+gem "rake", "~> 13.0"
+gem "rubocop", "~> 1.21"
+
+gem "rubocop-rake", "~> 0.6.0"

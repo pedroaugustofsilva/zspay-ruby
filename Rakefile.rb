@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
-task :console do
-  exec 'irb -r zspay -I ./lib'
-end
+require "bundler/gem_tasks"
+
+require "rubocop/rake_task"
+
+RuboCop::RakeTask.new
+
+task default: %i[rubocop]

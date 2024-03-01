@@ -13,7 +13,7 @@ module Zspay
       # @param custom_token [String, nil] An optional custom token to use for the request.
       # @return [OpenStruct] A structure containing the newly created transfer's details if the request is successful.
       def create(transfer, custom_token = nil)
-        post('/transferencias', transfer, custom_token)
+        post("/transferencias", transfer, custom_token)
       end
 
       # Retrieves the details of a scheduled transfer.

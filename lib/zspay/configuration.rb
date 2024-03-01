@@ -13,7 +13,7 @@ module Zspay
       #
       # @return [String] the base URL of the Zspay API endpoint.
       def endpoint
-        'https://api.zsystems.com.br'
+        "https://api.zsystems.com.br"
       end
     end
   end

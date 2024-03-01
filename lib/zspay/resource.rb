@@ -109,11 +109,8 @@ module Zspay
 
           OpenStruct.new({ success: false, error: body })
         else
-          error_log = Logger.new(STDERR)
-          error_log.error("Error while making Zspay request " \
-                          "to: #{response.uri} " \
-                          "body: #{response.body} " \
-                          "status: #{response.code}")
+          error_log = Logger.new($stderr)
+          error_log.error("Request error to: #{response.uri}\ncode: #{response.code}\nbody: #{response.body}")
 
           OpenStruct.new({ success: false, message: "An error occurred while making the request" })
         end

@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 3.2.2
+  TargetRubyVersion: 3.0
   NewCops: enable
 
 Style/StringLiterals:
@@ -12,3 +12,11 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+Naming/FileName:
+  Exclude:
+    - Rakefile.rb
+
+# TODO: replace OpenStruct in version 2
+Style/OpenStructUse:
+  Enabled: false

@@ -80,7 +80,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  byebug
+  byebug (~> 11.1)
   logger
   rake (~> 13.0)
   rubocop (~> 1.21)

@@ -13,7 +13,7 @@ module Zspay
       # @param client [Hash] A hash containing the client's information, such as name, email, etc.
       # @return [OpenStruct] A structure containing the newly created client's details if successful.
       def create(client)
-        post('/clientes', client)
+        post("/clientes", client)
       end
 
       # Adds a new card for an existing client on the Zspay platform.

@@ -9,7 +9,7 @@ module Zspay
       #
       # @return [OpenStruct] A structure containing the list of child establishments if the request is successful.
       def index
-        get('/estabelecimentos/filhos')
+        get("/estabelecimentos/filhos")
       end
 
       # Creates a new establishment on the Zspay platform.
@@ -17,7 +17,7 @@ module Zspay
       # @param establishment [Hash] A hash containing the establishment's information.
       # @return [OpenStruct] A structure containing the newly created establishment's details if the request is successful.
       def create(establishment)
-        post('/estabelecimentos', establishment, body: 'form')
+        post("/estabelecimentos", establishment, body: "form")
       end
 
       # Activates an existing establishment on the Zspay platform.

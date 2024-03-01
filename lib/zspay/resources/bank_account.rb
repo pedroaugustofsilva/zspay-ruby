@@ -9,7 +9,7 @@ module Zspay
       #
       # @return [OpenStruct] A list of bank accounts if the request is successful.
       def index
-        get('/estabelecimentos/contas_bancarias')
+        get("/estabelecimentos/contas_bancarias")
       end
 
       # Creates a new bank account for the current establishment.
@@ -17,7 +17,7 @@ module Zspay
       # @param account [Hash] The bank account details required for creation.
       # @return [OpenStruct] The created bank account details if the request is successful.
       def create(account)
-        post('/estabelecimentos/contas_bancarias', account)
+        post("/estabelecimentos/contas_bancarias", account)
       end
 
       # Activates a specific bank account for the current establishment.

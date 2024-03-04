@@ -11,7 +11,7 @@ gemspec
 gem "activesupport"
 gem "byebug", "~> 11.1"
 gem "logger"
+gem "minitest", "~> 5.14"
 gem "rake", "~> 13.0"
 gem "rubocop", "~> 1.21"
-
 gem "rubocop-rake", "~> 0.6.0"

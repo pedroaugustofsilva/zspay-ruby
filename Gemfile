@@ -14,4 +14,5 @@ gem "logger"
 gem "minitest", "~> 5.14"
 gem "rake", "~> 13.0"
 gem "rubocop", "~> 1.21"
+gem "rubocop-minitest", "~> 0.34.5", require: false
 gem "rubocop-rake", "~> 0.6.0"

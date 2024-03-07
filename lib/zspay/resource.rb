@@ -120,7 +120,7 @@ module Zspay
       #
       # @return [String] the API endpoint URL.
       def endpoint
-        Zspay::Configuration.endpoint
+        Zspay.configuration.endpoint
       end
 
       # Constructs the headers for the request.
@@ -129,7 +129,7 @@ module Zspay
       # @param custom_token [String, nil] an optional custom token for the request.
       # @return [Hash] the request headers.
       def headers(custom_token = nil)
-        token = custom_token ? "Bearer #{custom_token}" : "Bearer #{Zspay::Configuration.token}"
+        token = "Bearer #{custom_token || Zspay.configuration.token}"
         {
           Authorization: token
         }

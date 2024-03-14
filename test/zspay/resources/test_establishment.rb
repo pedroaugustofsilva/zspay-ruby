@@ -21,7 +21,7 @@ class TestEstablishment < Minitest::Test
   def test_create
     establishment_data = { name: "Example Establishment" }
     mock = Minitest::Mock.new
-    mock.expect :call, [], [@base_path, establishment_data, { body: "form" }]
+    mock.expect :call, [], [@base_path, establishment_data], body: "form"
 
     Zspay::Establishment.stub :post, mock do
       Zspay::Establishment.create(establishment_data)

@@ -23,6 +23,7 @@ GEM
     crack (1.0.0)
       bigdecimal
       rexml
+    docile (1.4.0)
     domain_name (0.6.20240107)
     ffi (1.16.3)
     ffi-compiler (1.0.1)
@@ -78,6 +79,12 @@ GEM
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
     ruby-progressbar (1.13.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
@@ -99,6 +106,7 @@ DEPENDENCIES
   rubocop (~> 1.21)
   rubocop-minitest (~> 0.34.5)
   rubocop-rake (~> 0.6.0)
+  simplecov (~> 0.22.0)
   webmock (~> 3.23)
   zspay!
 

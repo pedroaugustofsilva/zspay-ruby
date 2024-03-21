@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  rubocop:
     runs-on: ubuntu-latest
     name: Rubocop
     strategy:
@@ -23,5 +23,16 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-rubocop-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-rubocop-
+      - name: Install gems
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
       - name: Run Rubocop
-        run: bundle exec rake rubocop
+        run: bundle exec rubocop --parallel

@@ -36,3 +36,32 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Run Rubocop
         run: bundle exec rubocop --parallel
+
+  minitest:
+    runs-on: ubuntu-latest
+    name: Minitest
+    strategy:
+      matrix:
+        ruby:
+          - '3.2.2'
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-rubocop-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-rubocop-
+      - name: Install gems
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+      - name: Run Minitest
+        run: bundle exec rake test

@@ -9,3 +9,4 @@
 /*.gem
 /.tool-versions
 /.idea/
+.byebug_history

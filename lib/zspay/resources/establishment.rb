@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Zspay
-  # The Establishments class manages establishment-related actions within the Zspay platform.
-  # It allows for listing, creating, enabling, disabling establishments, and more, extending the functionality
+  # The Establishment class manages establishment-related actions within the Zspay platform.
+  # It allows for listing, creating, enabling, disabling establishment, and more, extending the functionality
   # from Zspay::Resource.
-  class Establishments < Zspay::Resource
+  class Establishment < Zspay::Resource
     class << self
       # Retrieves a list of child establishments associated with the current establishment.
       #

@@ -5,6 +5,8 @@ require "byebug"
 require "logger"
 require "active_support/hash_with_indifferent_access"
 
+require "zspay/version"
+
 require "zspay/configuration"
 
 require "zspay/resource"

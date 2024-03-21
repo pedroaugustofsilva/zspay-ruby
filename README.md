@@ -22,7 +22,7 @@ gem install zspay
 Before using the Zspay gem, you must configure it with your Zspay API credentials. This is typically done in an initializer in your Ruby application, such as config/initializers/zspay.rb.
 ```rb
 Zspay.configure do |config|
-  config.token = 'your_zspay_api_token'
+  config.token = ENV.fetch('YOUR_TOKEN')
 end
 ```
 

@@ -2,7 +2,8 @@ PATH
   remote: .
   specs:
     zspay (1.0.0)
-      http
+      activesupport (>= 6.0.0)
+      http (>= 5.2.0)
 
 GEM
   remote: https://rubygems.org/

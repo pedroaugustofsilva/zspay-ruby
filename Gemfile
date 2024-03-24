@@ -8,9 +8,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem "activesupport"
 gem "byebug", "~> 11.1"
-gem "logger"
 gem "minitest", "~> 5.14"
 gem "rake", "~> 13.0"
 gem "rubocop", "~> 1.21"

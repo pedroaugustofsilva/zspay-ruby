@@ -19,6 +19,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = Gem::Requirement.new("~> 3.0")
 
-  spec.add_runtime_dependency "http"
+  spec.add_runtime_dependency "activesupport", ">= 6.0.0"
+  spec.add_runtime_dependency "http", ">= 5.2.0"
+
   spec.metadata["rubygems_mfa_required"] = "true"
 end
